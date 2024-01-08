@@ -1,0 +1,38 @@
+{
+	"name": "gateway-proxy",
+	"version": "0.0.1",
+	"description": "Make requests to services from your API Gateway with easy error and response management.",
+	"author": "Aizawa-san <aizawa.dev@gmail.com>",
+	"license": "MIT",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"private": false,
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+		"build": "tsup src/index.ts --format cjs,esm --dts --minify terser",
+		"prepublishOnly": "npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/aiza-san/gateway-proxy.git"
+	},
+	"devDependencies": {
+		"@types/node": "^20.10.4",
+		"@typescript-eslint/eslint-plugin": "^6.13.2",
+		"eslint": "^8.55.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-config-standard-with-typescript": "^40.0.0",
+		"eslint-plugin-import": "^2.29.0",
+		"eslint-plugin-n": "^16.3.1",
+		"eslint-plugin-promise": "^6.1.1",
+		"terser": "^5.25.0",
+		"tsup": "^8.0.1",
+		"typescript": "^5.3.2"
+	},
+	"dependencies": {
+		"axios": "^1.6.5"
+	}
+}
